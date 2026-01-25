@@ -1,101 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Kamila Bayanova — NotesOn</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      background-color: #fafafa;
-      color: #111;
-    }
-    header {
-      padding: 40px 80px;
-      text-align: center;
-      background-color: #fff;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-    header h1 {
-      font-weight: normal;
-      font-size: 2.5em;
-      margin: 0;
-    }
-    header p {
-      margin-top: 10px;
-      font-size: 1.1em;
-      color: #555;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: 60px auto 40px auto;
-      padding: 0 20px;
-    }
-
-    .card {
-      background-color: #fff;
-      padding: 40px 20px;
-      text-align: center;
-      font-size: 1.2em;
-      font-weight: 500;
-      cursor: pointer;
-      transition: transform 0.3s, box-shadow 0.3s;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      color: #777;
-      font-size: 0.9em;
-      border-top: 1px solid #eee;
-      margin-top: 60px;
-    }
-
-    footer a {
-      color: #111;
-      text-decoration: none;
-      font-weight: 500;
-      margin-left: 5px;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <title>NotesOn — Kamila Bayanova</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<header>
-  <h1>Kamila Bayanova</h1>
-  <p>NotesOn — Thinking in public about power, education, and global systems</p>
-</header>
+  <header class="nav">
+    <nav>
+      <a href="about.html">About</a>
+      <a href="art.html">Art</a>
+      <a href="essays.html">Essays</a>
+      <a href="english.html">English</a>
+      <a href="spanish.html">Spanish</a>
+      <a href="opportunities.html">Opportunities</a>
+      <a href="politics.html">Politics</a>
+      <a href="development.html">Development</a>
+    </nav>
+  </header>
 
-<div class="grid">
-  <div class="card" onclick="location.href='essays.html'">Essays</div>
-  <div class="card" onclick="location.href='art.html'">Art</div>
-  <div class="card" onclick="location.href='english.html'">English</div>
-  <div class="card" onclick="location.href='spanish.html'">Spanish</div>
-  <div class="card" onclick="location.href='opportunities.html'">Opportunities</div>
-  <div class="card" onclick="location.href='politics.html'">Politics</div>
-  <div class="card" onclick="location.href='development.html'">Development</div>
-  <div class="card" onclick="location.href='about.html'">About</div>
-</div>
-
-<footer>
-  <p>Contact: <a href="mailto:kamila@example.com">kamila@example.com</a></p>
-  <p>&copy; 2026 Kamila Bayanova — NotesOn</p>
-</footer>
+  <main class="home">
+    <h1>Welcome to<br><span>NotesOn</span></h1>
+    <p class="author">BY KAMILA BAYANOVA</p>
+  </main>
 
 </body>
 </html>
