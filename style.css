@@ -49,3 +49,48 @@ body {
   font-size: 14px;
   letter-spacing: 1px;
 }
+/* About page */
+
+.about {
+  padding: 80px 60px;
+}
+
+.about h1 {
+  font-size: 64px;
+  margin-bottom: 40px;
+}
+
+.about h1 span {
+  color: #ff6a3d;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 60px;
+}
+
+.about-text p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.about-text ul {
+  margin-top: 20px;
+  padding-left: 20px;
+}
+
+.about-text li {
+  margin-bottom: 10px;
+}
+
+.about-contact {
+  background: #fff1d6;
+  padding: 30px;
+  border-radius: 12px;
+}
+
+.about-contact p {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
