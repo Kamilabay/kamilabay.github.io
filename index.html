@@ -21,21 +21,27 @@ nav {
 nav a { 
     margin: 0 10px; 
     cursor: pointer; 
-    text-decoration: underline; 
-    color: #0077cc;
+    text-decoration: none; 
+    color: #555;
+}
+nav a:hover {
+    color: black;
 }
 
 /* заголовок */
 h1 { 
     text-align: center; 
     margin-top: 20px; 
+    font-weight: normal;
+    letter-spacing: 2px;
 }
 
 /* описание */
 .description {
     text-align: center;
     max-width: 600px;
-    margin: 0 auto 40px auto;
+    margin: 0 auto 50px auto;
+    color: #666;
 }
 
 /* галерея */
@@ -43,82 +49,78 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
+    gap: 40px;
     padding: 20px;
 }
 
 /* карточка */
 .artwork {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
     width: 300px;
+    text-align: center;
 }
 
-/* картинки */
+/* картинка */
 .artwork img {
     width: 100%;
-    border-radius: 10px;
+    display: block;
 }
 
-/* текст под картиной */
+/* название */
 .artwork p {
     margin-top: 10px;
+    font-size: 14px;
+    color: #444;
 }
 </style>
 </head>
 
 <body>
 
-<!-- ЯЗЫКИ -->
 <nav>
-  <a onclick="setLang('ru')">Русский</a> | 
-  <a onclick="setLang('en')">English</a> | 
-  <a onclick="setLang('kz')">Қазақша</a>
+  <a onclick="setLang('ru')">RU</a>
+  <a onclick="setLang('en')">EN</a>
+  <a onclick="setLang('kz')">KZ</a>
 </nav>
 
 <h1 id="title"></h1>
 <p class="description" id="description"></p>
 
-<!-- ГАЛЕРЕЯ -->
 <div class="gallery">
 
     <div class="artwork">
-        <img src="images/art1.jpg" alt="Картина 1">
+        <img src="images/art1.jpg" alt="art">
         <p id="art1-text"></p>
     </div>
 
     <div class="artwork">
-        <img src="images/art2.jpg" alt="Картина 2">
+        <img src="images/art2.jpg" alt="art">
         <p id="art2-text"></p>
     </div>
 
 </div>
 
 <script>
-// тексты
 const texts = {
   ru: {
     title: "ОБ ИСКУССТВЕ",
-    description: "Проект о картинах, их смыслах и скрытых деталях.",
-    art1: "Плот Медузы — драма, отчаяние и надежда.",
-    art2: "Картина 2 — добавь свой текст."
+    description: "Пространство для изучения искусства, его смыслов и скрытых деталей.",
+    art1: "Плот Медузы",
+    art2: "Название картины"
   },
   en: {
     title: "ABOUT ART",
-    description: "A project about paintings, meanings and hidden details.",
-    art1: "The Raft of the Medusa — drama, despair and hope.",
-    art2: "Artwork 2 — add your text."
+    description: "A space for exploring art, its meanings and hidden details.",
+    art1: "The Raft of the Medusa",
+    art2: "Artwork Title"
   },
   kz: {
     title: "ӨНЕР ТУРАЛЫ",
-    description: "Картиналар, олардың мағынасы және жасырын детальдар туралы жоба.",
-    art1: "«Медуза салы» — драма, үміт және үмітсіздік.",
-    art2: "2-картина — өз мәтініңді қос."
+    description: "Өнерді, оның мағынасын және жасырын детальдарын зерттеу кеңістігі.",
+    art1: "Медуза салы",
+    art2: "Картина атауы"
   }
 };
 
-// смена языка
 function setLang(lang) {
     document.getElementById("title").innerText = texts[lang].title;
     document.getElementById("description").innerText = texts[lang].description;
@@ -126,7 +128,6 @@ function setLang(lang) {
     document.getElementById("art2-text").innerText = texts[lang].art2;
 }
 
-// язык по умолчанию
 setLang('ru');
 </script>
 
