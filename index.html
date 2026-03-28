@@ -4,13 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Art</title>
+
 <style>
 body { 
-    font-family: 'Arial', sans-serif; 
-    text-align: center; 
-    padding: 50px; 
+    font-family: Arial, sans-serif; 
+    margin: 0;
     background: #f7f7f7; 
     color: #333;
+}
+
+/* меню */
+nav { 
+    text-align: center; 
+    padding: 20px; 
 }
 nav a { 
     margin: 0 10px; 
@@ -18,14 +24,53 @@ nav a {
     text-decoration: underline; 
     color: #0077cc;
 }
-h1 { margin-bottom: 20px; }
-p { max-width: 600px; margin: 0 auto 30px auto; }
-.artwork { margin: 30px 0; }
-.artwork img { max-width: 80%; height: auto; }
+
+/* заголовок */
+h1 { 
+    text-align: center; 
+    margin-top: 20px; 
+}
+
+/* описание */
+.description {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+}
+
+/* галерея */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+/* карточка */
+.artwork {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 300px;
+}
+
+/* картинки */
+.artwork img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* текст под картиной */
+.artwork p {
+    margin-top: 10px;
+}
 </style>
 </head>
+
 <body>
 
+<!-- ЯЗЫКИ -->
 <nav>
   <a onclick="setLang('ru')">Русский</a> | 
   <a onclick="setLang('en')">English</a> | 
@@ -33,42 +78,47 @@ p { max-width: 600px; margin: 0 auto 30px auto; }
 </nav>
 
 <h1 id="title"></h1>
-<p id="description"></p>
+<p class="description" id="description"></p>
 
-<div class="artwork">
-    <img src="art1.jpg" alt="JEAN_LOUIS_THÉODORE_GÉRICAULT_-_La_Balsa_de_la_Medusa_(Museo_del_Louvre,_1818-19).jpg">
-    <p id="art1-text"></p>
-</div>
+<!-- ГАЛЕРЕЯ -->
+<div class="gallery">
 
-<div class="artwork">
-    <img src="art2.jpg" alt="Картина 2">
-    <p id="art2-text"></p>
+    <div class="artwork">
+        <img src="images/art1.jpg" alt="Картина 1">
+        <p id="art1-text"></p>
+    </div>
+
+    <div class="artwork">
+        <img src="images/art2.jpg" alt="Картина 2">
+        <p id="art2-text"></p>
+    </div>
+
 </div>
 
 <script>
-// Тексты для разных языков
+// тексты
 const texts = {
   ru: {
-    title: "Добро пожаловать в мой арт-проект",
-    description: "Здесь вы увидите мои работы и разборы картин.",
-    art1: "Картина 1: краткий разбор и история.",
-    art2: "Картина 2: краткий разбор и история."
+    title: "ОБ ИСКУССТВЕ",
+    description: "Проект о картинах, их смыслах и скрытых деталях.",
+    art1: "Плот Медузы — драма, отчаяние и надежда.",
+    art2: "Картина 2 — добавь свой текст."
   },
   en: {
-    title: "Welcome to my art project",
-    description: "Here you can see my artworks and analysis of paintings.",
-    art1: "Artwork 1: brief analysis and story.",
-    art2: "Artwork 2: brief analysis and story."
+    title: "ABOUT ART",
+    description: "A project about paintings, meanings and hidden details.",
+    art1: "The Raft of the Medusa — drama, despair and hope.",
+    art2: "Artwork 2 — add your text."
   },
   kz: {
-    title: "Өнер жобама қош келдіңіз",
-    description: "Мұнда менің жұмыстарым мен картиналардың талдауы көрсетіледі.",
-    art1: "Картина 1: қысқаша талдау мен тарих.",
-    art2: "Картина 2: қысқаша талдау мен тарих."
+    title: "ӨНЕР ТУРАЛЫ",
+    description: "Картиналар, олардың мағынасы және жасырын детальдар туралы жоба.",
+    art1: "«Медуза салы» — драма, үміт және үмітсіздік.",
+    art2: "2-картина — өз мәтініңді қос."
   }
 };
 
-// Функция смены языка
+// смена языка
 function setLang(lang) {
     document.getElementById("title").innerText = texts[lang].title;
     document.getElementById("description").innerText = texts[lang].description;
@@ -76,7 +126,7 @@ function setLang(lang) {
     document.getElementById("art2-text").innerText = texts[lang].art2;
 }
 
-// По умолчанию русский
+// язык по умолчанию
 setLang('ru');
 </script>
 
