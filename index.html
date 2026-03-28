@@ -1,35 +1,84 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Арт-Проект</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Art</title>
+<style>
+body { 
+    font-family: 'Arial', sans-serif; 
+    text-align: center; 
+    padding: 50px; 
+    background: #f7f7f7; 
+    color: #333;
+}
+nav a { 
+    margin: 0 10px; 
+    cursor: pointer; 
+    text-decoration: underline; 
+    color: #0077cc;
+}
+h1 { margin-bottom: 20px; }
+p { max-width: 600px; margin: 0 auto 30px auto; }
+.artwork { margin: 30px 0; }
+.artwork img { max-width: 80%; height: auto; }
+</style>
 </head>
 <body>
-    <header>
-        <h1>Арт-Проект</h1>
-        <nav>
-            <a href="index.html">Главная</a>
-            <a href="about.html">О проекте</a>
-        </nav>
-    </header>
 
-    <main>
-        <h2>Картины</h2>
-        <div class="gallery">
-            <div class="art-card">
-                <a href="canvas.html">
-                    <img src="images/medusa.jpg" alt="Плот Медузы">
-                    <h3>Плот Медузы (Théodore Géricault, 1819)</h3>
-                </a>
-            </div>
-            <!-- Добавляй другие картины по аналогии -->
-        </div>
-    </main>
+<nav>
+  <a onclick="setLang('ru')">Русский</a> | 
+  <a onclick="setLang('en')">English</a> | 
+  <a onclick="setLang('kz')">Қазақша</a>
+</nav>
 
-    <footer>
-        © 2026 Арт-Проект
-    </footer>
+<h1 id="title"></h1>
+<p id="description"></p>
+
+<div class="artwork">
+    <img src="art1.jpg" alt="Картина 1">
+    <p id="art1-text"></p>
+</div>
+
+<div class="artwork">
+    <img src="art2.jpg" alt="Картина 2">
+    <p id="art2-text"></p>
+</div>
+
+<script>
+// Тексты для разных языков
+const texts = {
+  ru: {
+    title: "Добро пожаловать в мой арт-проект",
+    description: "Здесь вы увидите мои работы и разборы картин.",
+    art1: "Картина 1: краткий разбор и история.",
+    art2: "Картина 2: краткий разбор и история."
+  },
+  en: {
+    title: "Welcome to my art project",
+    description: "Here you can see my artworks and analysis of paintings.",
+    art1: "Artwork 1: brief analysis and story.",
+    art2: "Artwork 2: brief analysis and story."
+  },
+  kz: {
+    title: "Өнер жобама қош келдіңіз",
+    description: "Мұнда менің жұмыстарым мен картиналардың талдауы көрсетіледі.",
+    art1: "Картина 1: қысқаша талдау мен тарих.",
+    art2: "Картина 2: қысқаша талдау мен тарих."
+  }
+};
+
+// Функция смены языка
+function setLang(lang) {
+    document.getElementById("title").innerText = texts[lang].title;
+    document.getElementById("description").innerText = texts[lang].description;
+    document.getElementById("art1-text").innerText = texts[lang].art1;
+    document.getElementById("art2-text").innerText = texts[lang].art2;
+}
+
+// По умолчанию русский
+setLang('ru');
+</script>
+
 </body>
 </html>
